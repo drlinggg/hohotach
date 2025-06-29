@@ -1,2 +1,2 @@
 Великий Павел Дуров дал мне возможность использовать грок в тг, поэтому я набросал за полчаса прототип диалогого окна в виме
-![image](https://github.com/user-attachments/assets/a2ece970-3f64-4d9b-b0c9-1a5625ee285c)
+![image](https://github.com/user-attachments/assets/876daf0c-2985-4c5a-bde1-44785823c55f)
