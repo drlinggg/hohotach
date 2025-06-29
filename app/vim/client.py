@@ -1,13 +1,13 @@
 import asyncio
 import logging
 from utils import setup_logging
+from config import ClientConfig
 
 
 class VimClient:
 
-    def __init__(self, host='127.0.0.1', port=12345):
-        self.host = host
-        self.port = port
+    def __init__(self, config: ClientConfig):
+        self.config = config
         self.logger = logging.getLogger(__name__)
         self.server = None
         setup_logging()
@@ -31,7 +31,7 @@ class VimClient:
             writer.write(message.encode())
             await writer.drain()
 
-            data = await reader.read(100)
+            data = await reader.read(1024*100)
             response = data.decode()
 
             writer.close()
@@ -48,10 +48,10 @@ class VimClient:
         try:
             self.server = await asyncio.start_server(
                 self.handle_request,
-                self.host,
-                self.port
+                self.config.host,
+                self.config.port
             )
-            self.logger.info(f"vim client started on {self.host}:{self.port}")
+            self.logger.info(f"vim client started on {self.config.host}:{self.config.port}")
             await self.server.serve_forever()
         finally:
             if self.server:

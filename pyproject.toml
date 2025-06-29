@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "hohotach"
-version = "0.1.0"
+version = "0.0.1"
 description = "unpowerful tool to ask grok via vim"
 authors = [
     "Banakh Andrei <uuetsukeu@mail.ru>"
@@ -12,6 +12,7 @@ packages = [{ include = "app" }]
 [tool.poetry.dependencies]
 python = "^3.9"
 telethon = "^1.40.0"
+pyyaml = "^6.0.2"
 
 [tool.poetry.scripts]
 launch = "app.__main__:main"

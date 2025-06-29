@@ -1,0 +1,9 @@
+vim_client:
+  host:
+  port:
+telegram_client:
+  host:
+  port:
+  telethon:
+    api_id:
+    api_hash:

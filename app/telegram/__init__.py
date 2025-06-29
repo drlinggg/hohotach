@@ -1,1 +1,1 @@
-from .client import TelegramC
+from .client import TelegramClient
